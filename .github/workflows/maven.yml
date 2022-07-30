@@ -98,7 +98,9 @@ jobs:
     steps:
       - name: download project
         uses: actions/download-artifact@v3
-              
+        with:
+          name: github-workflow-sample2.jar        
+      - run: ls -la
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
