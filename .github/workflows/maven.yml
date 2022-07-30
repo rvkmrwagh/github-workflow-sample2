@@ -114,4 +114,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
 #          repository: ${{ github.repository }}/demo
-          tags: ${{ github.repository_owner }}/${{ github.repository }}/$IMAGE_ID
+          tags: ${{ github.repository }}:latest
