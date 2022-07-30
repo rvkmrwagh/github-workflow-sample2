@@ -34,21 +34,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: download project
-        uses: actions/download-artifact@v2
-        with:
-          name: github-workflow-sample2.jar
+
 
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - run: git init
+
       - name: Bump version and push tag
         id: set_version
         uses: laputansoft/github-tag-action@v4.6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: set varibles
         id: prepare_vars
@@ -66,7 +64,13 @@ jobs:
           release_name: release v + $TAG_TO_SET
           body: ${{ steps.set_version.outputs.new_tag }}
 
+      - name: download project
+        uses: actions/download-artifact@v3
+        with:
+          name: github-workflow-sample2.jar
+
       - run: ls -la
+
       - name: upload assets to github release
         uses: actions/upload-release-asset@v1
         env:
@@ -75,7 +79,7 @@ jobs:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
           asset_path: .
           asset_name: '*'
-          asset_content_type: File
+          asset_content_type: application/java-archive
 
 
 
