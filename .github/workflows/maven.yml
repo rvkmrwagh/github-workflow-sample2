@@ -39,6 +39,10 @@ jobs:
         with:
           name: github-workflow-sample2.jar
 
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: git init          
       - name: Bump version and push tag
         id: set_version
         uses: laputansoft/github-tag-action@v4.6
@@ -102,5 +106,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/demo
+#          repository: ${{ github.repository }}/demo
           tags: latest, ${{ github.run_number }}
