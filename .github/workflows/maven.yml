@@ -54,6 +54,9 @@ jobs:
           TAG_TO_SET=${{ steps.set_version.outputs.new_tag }}
           DOCKER_IMAGE_NAME=${{ github.repository }}
           DOCKER_IMAGE_ID=$DOCKER_IMAGE_NAME:$TAG_TO_SET
+          IMAGE_NAME=${{ github.repository }}
+          IMAGE_ID=$IMAGE_NAME:$TAG_TO_SET
+
       - name: create github release
         id: create-new-release
         uses: actions/create-release@v1
@@ -111,4 +114,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
 #          repository: ${{ github.repository }}/demo
-          tags: latest, ${{ github.run_number }}
+          tags: ${{ github.repository_owner }}/${{ github.repository }}/$IMAGE_ID
