@@ -64,7 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           #tag_name: v${{ github.run_number }}
-          tag_name: -v$TAG_TO_SET
+          tag_name: v-$TAG_TO_SET
           release_name: release ${{ github.ref }}
           body: ${{ steps.set_version.outputs.new_tag }}
 
