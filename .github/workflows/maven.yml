@@ -77,8 +77,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-          asset_path: .
-          asset_name: '*'
+          asset_path: ./github-workflow-sample2.jar
+          asset_name: github-workflow-sample2.jar
           asset_content_type: application/java-archive
 
 
