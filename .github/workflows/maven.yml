@@ -73,9 +73,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
-          asset_path: .
-          asset_name: .
-          asset_content_type: application/java-archive
+  #        asset_path: .
+  #        asset_name: .
+  #        asset_content_type: application/java-archive
 
 
 
