@@ -41,7 +41,7 @@ jobs:
 
       - name: Bump version and push tag
         id: set_version
-        uses: laputansoft/github-tag-action@v6.0
+        uses: laputansoft/github-tag-action@v4.6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
