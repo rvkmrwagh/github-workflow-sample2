@@ -38,6 +38,4 @@
 		</plugins>
 		<finalName>github-workflow-sample2</finalName>
 	</build>
-
-	
 </project>
