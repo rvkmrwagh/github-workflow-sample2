@@ -82,9 +82,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: release-project
     steps:
-      - uses: actions/checkout@v3
-      - run: ls -la
-      - name: Build and push docker image
+      - uses: actions/checkout@v3   ## checkout
+
+      - name: Build and push docker image   ## create image and push to docker repository
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: rvkmrwagh/github-workflow-sample2
