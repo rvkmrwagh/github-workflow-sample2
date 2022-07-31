@@ -31,7 +31,8 @@ jobs:
       id: set_version
       uses: anothrNick/github-tag-action@1.36.0
       env:
-        github_token: ${{ secrets.MY_TOKEN }}
+        args:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
