@@ -1,18 +1,19 @@
 # github-workflow-sample2
 
 ## About source code
-### we have sample java code generated from https://start.spring.io/ at repository.
-### In pom.xml, I have added finalName for genartion of jar
+we have sample java code generated from https://start.spring.io/ at repository.
+In pom.xml, I have added finalName for genartion of jar
 
 ## About GitHub Workflow
-### We have workflow defined in repository at .github/workflows/maven.yml
-### Condition to trgger workflow is commit to main branch.
-### Below are 3 jobs get triggered when there is new commit in git hub repository.
+We have workflow defined in repository at .github/workflows/maven.yml
+Condition to trgger workflow is commit to main branch.
+Below are 3 jobs get triggered when there is new commit in git hub repository.
 - build
 - release-project
 - build-container
-### All of those get executed in sequece as defined above as there are dependecy in beween them.
+All of those get executed in sequece as defined above as there are dependecy in beween them.
 
+![](images/jobs.png)
 
 ## build:
 This is first job get executed after commit to main branch. This job have task to checkout, install java 11, run maven build and upload artificats.
