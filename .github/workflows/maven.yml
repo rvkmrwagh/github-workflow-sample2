@@ -31,10 +31,8 @@ jobs:
       id: set_version
       uses: anothrNick/github-tag-action@1.36.0
       env:
-        args:
-        - github_token: ${{ secrets.GITHUB_TOKEN }}
-
-
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
 
   release-project:
     name: release demo project
