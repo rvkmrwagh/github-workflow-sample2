@@ -55,14 +55,14 @@ jobs:
           WITH_V: true
           DEFAULT_BUMP: patch
 
-      - name: set variables
-        id: prepare_vars
-        run: |
-          TAG_TO_SET=${{ steps.set_version.outputs.new_tag }}
-          DOCKER_IMAGE_NAME=${{ github.repository }}
-          DOCKER_IMAGE_ID=$DOCKER_IMAGE_NAME:$TAG_TO_SET
-          IMAGE_NAME=${{ github.repository }}
-          IMAGE_ID=$IMAGE_NAME:$TAG_TO_SET
+#      - name: set variables
+#        id: prepare_vars
+#        run: |
+#          TAG_TO_SET=${{ steps.set_version.outputs.new_tag }}
+#          DOCKER_IMAGE_NAME=${{ github.repository }}
+#          DOCKER_IMAGE_ID=$DOCKER_IMAGE_NAME:$TAG_TO_SET
+#          IMAGE_NAME=${{ github.repository }}
+#          IMAGE_ID=$IMAGE_NAME:$TAG_TO_SET
 
       - name: create github release
         id: create-new-release
@@ -81,7 +81,7 @@ jobs:
         with:
           name: github-workflow-sample2.jar
 
-      - run: ls -la
+#      - run: ls -la
 
       - name: upload assets to github release
         uses: actions/upload-release-asset@v1
