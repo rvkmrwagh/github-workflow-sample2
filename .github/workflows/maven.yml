@@ -61,10 +61,10 @@ jobs:
           body: ${{ steps.set_version.outputs.new_tag }}
           draft: false
 
-#      - name: download project
-#        uses: actions/download-artifact@v3
-#        with:
-#          name: github-workflow-sample2.jar
+      - name: download project
+        uses: actions/download-artifact@v3
+        with:
+          name: github-workflow-sample2.jar
 
       - name: upload assets to github release   ## upload release assets
         uses: actions/upload-release-asset@v1
