@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
 
-      - name: set varibles
+      - name: set variables
         id: prepare_vars
         run: |
           TAG_TO_SET=${{ steps.set_version.outputs.new_tag }}
