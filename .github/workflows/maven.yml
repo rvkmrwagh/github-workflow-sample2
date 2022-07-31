@@ -39,10 +39,9 @@ jobs:
 #      - uses: actions/checkout@v2
 #        with:
 #          fetch-depth: 0
-      - name: download project
-        uses: actions/download-artifact@v2
+      - uses: actions/checkout@v2
         with:
-          name: github-workflow-sample2.jar
+          fetch-depth: '0'
 
       - run: git init
 
