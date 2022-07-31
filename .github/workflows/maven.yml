@@ -26,13 +26,7 @@ jobs:
         name: github-workflow-sample2.jar
         path: target/
 
-    - run: git init
-    - name: Bump version and push tag
-      id: set_version
-      uses: anothrNick/github-tag-action@1.36.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        WITH_V: true
+
 
   release-project:
     name: release demo project
@@ -53,6 +47,13 @@ jobs:
 #        with:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - run: git init
+      - name: Bump version and push tag
+        id: set_version
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
 
       - name: set varibles
         id: prepare_vars
