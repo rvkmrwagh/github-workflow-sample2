@@ -46,7 +46,7 @@ jobs:
       - run: git init
       - name: Bump version and push tag
         id: set_version
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: anothrNick/github-tag-action@1.39.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
@@ -66,10 +66,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ github.run_number }}
+          tag_name: ${{ github.run_number }}
 #          tag_name: v-$TAG_TO_SET
           release_name: release ${{ github.ref }}
           body: ${{ steps.set_version.outputs.new_tag }}
+          draft: false
 
       - name: download project
         uses: actions/download-artifact@v3
