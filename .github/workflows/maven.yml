@@ -44,6 +44,9 @@ jobs:
 #          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: git init
+      - uses: actions/checkout@master
+        with:
+          fetch-depth: '0'
       - name: Bump version and push tag
         id: set_version
         uses: anothrNick/github-tag-action@1.39.0
