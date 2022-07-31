@@ -53,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          DEFAULT_BUMP: major
+          DEFAULT_BUMP: patch
 
       - name: set variables
         id: prepare_vars
@@ -72,7 +72,7 @@ jobs:
         with:
           tag_name: ${{ github.run_number }}
 #          tag_name: v-$TAG_TO_SET
-          release_name: release ${{ github.step_summary }}
+          release_name: release ${{ github.ref_name }}
           body: ${{ steps.set_version.outputs.new_tag }}
           draft: false
 
