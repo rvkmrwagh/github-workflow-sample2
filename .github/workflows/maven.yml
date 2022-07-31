@@ -72,7 +72,7 @@ jobs:
         with:
           tag_name: ${{ github.run_number }}
 #          tag_name: v-$TAG_TO_SET
-          release_name: release ${{ github.ref }}
+          release_name: release ${{ github.step_summary }}
           body: ${{ steps.set_version.outputs.new_tag }}
           draft: false
 
