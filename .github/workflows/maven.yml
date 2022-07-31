@@ -35,16 +35,25 @@ jobs:
     needs: build
     steps:
 
-
-      - uses: actions/checkout@v2
+#
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 0
+      - name: download project
+        uses: actions/download-artifact@v2
         with:
-          fetch-depth: 0
+          name: github-workflow-sample2.jar
 
       - run: git init
 
+#      - name: Bump version and push tag
+#        id: set_version
+#        uses: laputansoft/github-tag-action@v4.6
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Bump version and push tag
         id: set_version
-        uses: laputansoft/github-tag-action@v4.6
+        uses: anothrNick/github-tag-action@1.36.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
