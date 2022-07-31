@@ -31,8 +31,9 @@ jobs:
       id: set_version
       uses: anothrNick/github-tag-action@1.36.0
       with:
-        github_token: ${{ secrets.MY_TOKEN }}
-
+          file: CHANGELOG.md
+          github-token: ${{ secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 
 
   release-project:
